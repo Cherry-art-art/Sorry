@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm Sorry, Arya</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>I'm Sorry, Arya 💕</h1>
+    <p id="intro-text">I know I made a mistake, and I want to make it right. You're so important to me, and I hope this little surprise cheers you up!</p>
+    <button id="start-button">Click Here for a Surprise 🎉</button>
+    
+    <div id="fun-section" style="display: none;">
+      <p id="heart-text">You found a hidden heart! ❤</p>
+      <p id="hug-text">Now, let me give you a virtual hug! 🤗</p>
+      <button onclick="sendHug()">Send Virtual Hug</button>
+      <div id="hug-section" style="display: none; margin-top: 20px;">
+        <p id="hug-message">✨ You’ve received a warm, virtual hug! ✨</p>
+        <p id="forgiveness-message">Will you forgive me? 🥺</p>
+        <button onclick="showForgiveness()">I Forgive You</button>
+        <button onclick="showNoForgiveness()">No</button>
+        <div id="no-message" style="display: none;">
+          <p> Maan na pdega...</p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="forgiveness-section" style="display: none;">
+      <p>💖 Thank you, Arya! I promise to always be a better friend. 💖</p>
+    </div>
+  </div>
+  <script>
+    document.getElementById('start-button').addEventListener('click', () => {
+      // Hide the intro text and the start button
+      document.getElementById('intro-text').style.display = 'none';
+      document.getElementById('start-button').style.display = 'none';
+      
+      // Show the fun section
+      document.getElementById('fun-section').style.display = 'block';
+    });
+
+    function sendHug() {
+      // Hide the previous text
+      document.getElementById('heart-text').style.display = 'none';
+      document.getElementById('hug-text').style.display = 'none';
+      
+      // Show the hug section
+      document.getElementById('hug-section').style.display = 'block';
+    }
+
+    function showForgiveness() {
+      // Hide the hug section and show the forgiveness message
+      document.getElementById('hug-section').style.display = 'none';
+      document.getElementById('fun-section').style.display = 'none';
+      document.getElementById('forgiveness-section').style.display = 'block';
+    }
+
+    function showNoForgiveness() {
+      // Show the "Maan na pdega..." message
+      document.getElementById('no-message').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
